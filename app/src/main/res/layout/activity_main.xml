@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/muiscBar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal" >
+        <ImageButton
+            android:id="@+id/button_cover"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+            android:contentDescription="커버 버튼"
+            android:src="@drawable/cv_yr_ourlove"
+            android:background="@android:color/transparent" />
+        <Button
+            android:id="@+id/button_title"
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:gravity="left"
+            android:text="노래 제목"
+            android:backgroundTint="@android:color/transparent"/>
+        <ImageButton
+            android:id="@+id/button_state"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:contentDescription="플레이 버튼"
+            android:src="@drawable/ic_play"
+            android:background="@android:color/transparent" /> <!--ic_pause-->
+        <ImageButton
+            android:id="@+id/button_next"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:contentDescription="다음 버튼"
+            android:src="@drawable/ic_next"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+
+        <ImageButton
+            android:id="@+id/button_home"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="100dp"
+            android:contentDescription="홈 버튼"
+            android:src="@drawable/ic_home"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/button_find"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="0dp"
+            android:contentDescription="찾기 버튼"
+            android:src="@drawable/ic_find"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+</LinearLayout>
