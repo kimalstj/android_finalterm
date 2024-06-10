@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class MusicManager {
     private static MusicManager instance;
-    private List<Music> allMusics = new ArrayList<>();
+    private List<Music> allMusics = new ArrayList<>(); // 모든 음악을 저장할 리스트
     private Context context;
     private MediaPlayer mediaPlayer;
     private Music currentSelectedMusic; // 현재 선택된 노래를 저장할 변수
@@ -18,7 +18,7 @@ public class MusicManager {
 
     private MusicManager(Context context) {
         this.context = context;
-        initializeMusics();
+        initializeMusics(); // 음악 데이터를 초기화
     }
 
     public static MusicManager getInstance(Context context) {
@@ -28,8 +28,9 @@ public class MusicManager {
         return instance;
     }
 
+    // 음악 데이터를 초기화하는 메서드
     private void initializeMusics() {
-        // 음악 데이터 초기화
+        // 음악 데이터 추가
         addMusic(new Music("Black Space", "Taylor Swift", R.drawable.lp_taylor_1989, R.raw.ms_taylor_blackspace));
         addMusic(new Music("Lover", "Taylor Swift", R.drawable.lp_taylor_lover, R.raw.ms_taylor_lover));
         addMusic(new Music("The Lucky One", "Taylor Swift", R.drawable.lp_taylor_red, R.raw.ms_taylor_theluckyone));
@@ -58,10 +59,12 @@ public class MusicManager {
         addMusic(new Music("나도 여자랍니다", "장나라", R.drawable.lp_nara_third, R.raw.ms_nara_imawoman));
     }
 
+    // 음악 데이터를 리스트에 추가하는 메서드
     private void addMusic(Music music) {
         allMusics.add(music);
     }
 
+    // 음악을 재생하는 메서드
     public void playMusic(int musicResource) {
         if (mediaPlayer != null) {
             mediaPlayer.release();
@@ -70,6 +73,7 @@ public class MusicManager {
         mediaPlayer.start();
     }
 
+    // 음악 재생을 멈추는 메서드
     public void stopMusic() {
         if (mediaPlayer != null) {
             mediaPlayer.release();
@@ -77,40 +81,69 @@ public class MusicManager {
         }
     }
 
+    public int getDuration() {
+        if (mediaPlayer != null) {
+            return mediaPlayer.getDuration();
+        }
+        return 0;
+    }
+
+    public int getCurrentPosition() {
+        if (mediaPlayer != null) {
+            return mediaPlayer.getCurrentPosition();
+        }
+        return 0;
+    }
+
+    public void seekTo(int position) {
+        if (mediaPlayer != null) {
+            mediaPlayer.seekTo(position);
+        }
+    }
+
     private Set<Music> favoriteMusics = new HashSet<>(); // 보관함에 있는 음악을 저장할 집합
 
+    // 즐겨찾기 음악을 추가하는 메서드
     public void addFavoriteMusic(Music music) {
         favoriteMusics.add(music);
     }
 
+    // 즐겨찾기 음악을 제거하는 메서드
     public void removeFavoriteMusic(Music music) {
         favoriteMusics.remove(music);
     }
 
+    // 특정 음악이 즐겨찾기에 있는지 확인하는 메서드
     public boolean isFavoriteMusic(Music music) {
         return favoriteMusics.contains(music);
     }
 
+    // 즐겨찾기 음악 목록을 반환하는 메서드
     public Set<Music> getFavoriteMusics() {
         return favoriteMusics;
     }
 
+    // 현재 선택된 음악을 반환하는 메서드
     public Music getCurrentSelectedMusic() {
         return currentSelectedMusic;
     }
 
+    // 현재 선택된 음악을 설정하는 메서드
     public void setCurrentSelectedMusic(Music music) {
         currentSelectedMusic = music;
     }
 
+    // 재생 목록에 음악을 추가하는 메서드
     public void addToPlaybackList(Music music) {
         playbackList.add(music);
     }
 
+    // 재생 목록을 반환하는 메서드
     public List<Music> getPlaybackList() {
         return playbackList;
     }
 
+    // 음악 제목으로 음악을 검색하는 메서드
     public List<Music> searchMusicByTitle(String query) {
         List<Music> searchResults = new ArrayList<>();
         for (Music music : allMusics) {

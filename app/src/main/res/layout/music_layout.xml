@@ -27,25 +27,57 @@
             android:layout_marginBottom="330dp"
             android:rotation="4"
             android:src="@drawable/ic_tonearm" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="143dp"
+            android:layout_marginBottom="152dp"
             android:layout_marginLeft="25dp"
             android:layout_height="40dp"
             android:textStyle="bold"
             android:text="노래 제목"
             android:textSize="25dp" />
+
         <TextView
             android:id="@+id/singer"
             android:layout_width="match_parent"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="113dp"
+            android:layout_marginBottom="125dp"
             android:layout_marginLeft="30dp"
             android:layout_height="30dp"
             android:text="가수 이름"
             android:textSize="20dp" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="48dp"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="0:00"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/total_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="0:00"
+            android:textSize="17dp" />
 
         <ImageButton
             android:id="@+id/button_heart"
@@ -53,7 +85,7 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|left"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="70dp"
             android:contentDescription="재생 버튼"
             android:src="@drawable/ic_emptyheart"
             android:background="@android:color/transparent" />
@@ -63,7 +95,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="70dp"
             android:contentDescription="재생 버튼"
             android:src="@drawable/ic_pause"
             android:background="@android:color/transparent" />
@@ -73,7 +105,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="70dp"
             android:layout_marginRight="100dp"
             android:contentDescription="다음 버튼"
             android:src="@drawable/ic_next"
@@ -84,7 +116,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|left"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="70dp"
             android:layout_marginLeft="100dp"
             android:contentDescription="다음 버튼"
             android:src="@drawable/ic_previous"
@@ -95,7 +127,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="70dp"
             android:layout_marginRight="30dp"
             android:contentDescription="다음 버튼"
             android:src="@drawable/ic_list"
